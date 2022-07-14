@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:01:40 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/14 14:17:11 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/14 18:17:47 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 
 void	error_check(char *a, int i);
 void	ft_error(char *str, int i, char *a);
+void	ft_swap(char *a, char *b);
 
 #endif

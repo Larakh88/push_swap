@@ -6,17 +6,17 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:02:16 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/13 12:03:58 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/14 18:43:10 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_swap(int *a, int *b)
+void	ft_swap(char *a, char *b)
 {
-	int	temp;
+	char	temp;
 
 	temp = *a;
-	a = b;
+	*a = *b;
 	*b = temp;
 }
