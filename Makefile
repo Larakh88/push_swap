@@ -6,7 +6,7 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 11:04:16 by lel-khou          #+#    #+#              #
-#    Updated: 2022/07/13 13:51:15 by lel-khou         ###   ########.fr        #
+#    Updated: 2022/07/14 14:17:07 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ RM = rm -f
 
 NAME = push_swap
 
-SRC = main.c
+SRC = main.c error_check.c
 
 OBJS = $(SRC:.c=.o)
 
