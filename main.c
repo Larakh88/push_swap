@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/15 14:38:58 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/15 23:44:20 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,16 @@ int	main(int argc, char **argv)
 	if (!ptr)
 		ft_error("Error: malloc\n", 1, ptr);
 	if (argc == 2)
-	{
-		error_check(argv[1], ptr);
-	//	ptr->a = ft_split(argv[1], ' ');
-	}
+		ptr->temp = ft_split(argv[1], ' ');
 	if (argc > 2)
 	{
+		ptr->temp = malloc(sizeof(char *) * argc);
 		while (i < argc - 1)
 		{
-			ptr->a[i] = ft_atoi(argv[i + 1]);
+			ptr->temp[i] = ft_strdup(argv[i + 1]);
 			i++;
 		}
-		printf("%d\n", ptr->a[0]);
-		printf("%d\n", ptr->a[1]);
-		printf("%d\n", ptr->a[2]);
-		printf("%d\n", ptr->a[3]);
+		ptr->temp[i] = NULL;
 	}
+	error_check(ptr);
 }

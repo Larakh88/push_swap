@@ -2,7 +2,7 @@ make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/laraelkhoury/Desktop/push_swap'
 make -C libft
  
-GCC -Wall -Werror -Wextra   -c -o main.o main.c
-GCC main.o error_check.o -L./libft -lft -o push_swap
+GCC -Wall -Werror -Wextra   -c -o error_check.o error_check.c
+GCC main.o error_check.o ft_swap.o -L./libft -lft -o push_swap
 make: Leaving directory `/Users/laraelkhoury/Desktop/push_swap'
  
