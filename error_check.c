@@ -6,31 +6,32 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:34:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/14 14:17:08 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/15 14:25:55 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	error_check(char *a, int i)
+void	error_check(char *str, t_stack *ptr)
 {
-	int	j;
+	int	i;
 
-	j = 0;
-	while (j < i)
+	i = 0;
+	while (str[i] != 0)
 	{
-		if (ft_isalpha(a[j]) == 1)
-		{
-			ft_error("Error: Non Numerical Argument", 1, a);
-			break ;
-		}
-		j++;
-	}
+		if (((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1]) == 1) \
+		|| ft_isdigit(str[i]) == 1 || (str[i] == ' '))
+			i++;
+		else
+			ft_error("Error: Non Numerical Argument!\n", 1, ptr);
+	}	
 }
 
-void	ft_error(char *str, int i, char *a)
+
+void	ft_error(char *str, int i, t_stack *ptr)
 {
-	free (a);
+	free (ptr->a);
+	free (ptr);
 	ft_putstr_fd(str, 1);
 	exit(i);
 }
