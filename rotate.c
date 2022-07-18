@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 12:34:12 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 14:58:17 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_rotate(char *str, int *array, t_stack *ptr)
 		i++;
 	}
 	array[i - 1] = temp;
+	ft_putstr_fd("r", 1);
 	ft_putstr_fd(str, 1);
 }
 
@@ -38,7 +39,7 @@ void	ft_rr(t_stack *ptr)
 {
 	ft_rotate("", ptr->a, ptr);
 	ft_rotate("", ptr->b, ptr);
-	ft_putstr_fd("rr\n", 1);
+	ft_putstr_fd("\n", 1);
 }
 
 void	ft_rrotate(char *str, int *array, t_stack *ptr)
@@ -59,12 +60,13 @@ void	ft_rrotate(char *str, int *array, t_stack *ptr)
 		i--;
 	}
 	array[i] = temp;
+	ft_putstr_fd("r", 1);
 	ft_putstr_fd(str, 1);
 }
 
 void	ft_rrr(t_stack *ptr)
 {
-	ft_rrotate("", ptr->a, ptr);
+	ft_rrotate("r", ptr->a, ptr);
 	ft_rrotate("", ptr->b, ptr);
-	ft_putstr_fd("rrr\n", 1);
+	ft_putstr_fd("\n", 1);
 }

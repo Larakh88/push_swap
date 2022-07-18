@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 12:41:31 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:36:13 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,7 @@ int	main(int argc, char **argv)
 	if (check_sort(ptr->a, ptr) == 0)
 		ft_error("", 0, ptr);
 	else
-	{
-		ft_pb(ptr);
-		ft_pb(ptr);
-		ft_pb(ptr);
-		ft_ss(ptr);
-	}
-		//ft_sort_select(ptr);
+		ft_sort_select(ptr);
 	printf("a is\n%d\n", ptr->a[0]);
 	printf("%d\n", ptr->a[1]);
 	printf("%d\n", ptr->a[2]);

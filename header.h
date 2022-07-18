@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:01:40 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 12:39:45 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 14:58:21 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ void	ft_check_limits(t_stack *ptr);
 void	stack_init(t_stack *ptr);
 int		check_sort(int *array, t_stack *ptr);
 void	ft_sort_select(t_stack *ptr);
-void	ft_sort_2(int *a, t_stack *ptr);
-void	ft_sort_3(int *a, t_stack *ptr);
+void	ft_merge(t_stack *ptr);
+void	ft_sort_2(char *str, int *array, t_stack *ptr);
+void	ft_sort_3(char *str, int *array, t_stack *ptr);
 void	ft_sort_5(t_stack *ptr);
 void	ft_swap(char *str, int *array, t_stack *ptr);
 void	ft_ss(t_stack *ptr);

@@ -6,13 +6,13 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 11:04:16 by lel-khou          #+#    #+#              #
-#    Updated: 2022/07/16 15:44:36 by lel-khou         ###   ########.fr        #
+#    Updated: 2022/07/18 17:06:37 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = GCC
+CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 
 HEADER = header.h
 

@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:02:05 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/16 15:59:32 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:06:40 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ void	stack_init(t_stack *ptr)
 int	check_sort(int *array, t_stack *ptr)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < ptr->sizea - 1)
+	if (array == ptr->a)
+		j = ptr->sizea;
+	else
+		j = ptr->sizeb;
+	while (i < j - 1)
 	{
 		if (array[i] < array[i + 1])
 			i++;

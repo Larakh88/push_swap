@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 12:42:14 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:06:39 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,16 @@ void	ft_swap(char *str, int *array, t_stack *ptr)
 		temp = array[0];
 		array[0] = array[1];
 		array[1] = temp;
-		ft_putstr_fd(str, 1);
 	}
+	ft_putstr_fd("s", 1);
+	ft_putstr_fd(str, 1);
 }
 
 void	ft_ss(t_stack *ptr)
 {
 	ft_swap("", ptr->a, ptr);
 	ft_swap("", ptr->b, ptr);
-	ft_putstr_fd("ss\n", 1);
+	ft_putstr_fd("s\n", 1);
 }
 
 void	ft_pa(t_stack *ptr)

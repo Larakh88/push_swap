@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:18:28 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 12:40:36 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:35:57 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,30 @@
 void	ft_sort_select(t_stack *ptr)
 {
 	if (ptr->sizea == 2)
-		ft_sort_2(ptr->a, ptr);
+		ft_sort_2("a\n", ptr->a, ptr);
 	if (ptr->sizea == 3)
-		ft_sort_3(ptr->a, ptr);
+		ft_sort_3("a\n", ptr->a, ptr);
 	if (ptr->sizea > 3 && ptr->sizea < 7)
 		ft_sort_5(ptr);
 }
 
-void	ft_sort_2(int *a, t_stack *ptr)
+void	ft_sort_2(char *str, int *array, t_stack *ptr)
 {
-	if (a[0] > a[1])
-		ft_swap("sa\n", a, ptr);
+	if (check_sort(array, ptr) == 1)
+		ft_swap(str, array, ptr);
 }
 
-void	ft_sort_3(int *a, t_stack *ptr)
+void	ft_sort_3(char *str, int *array, t_stack *ptr)
 {
-	while (check_sort(a, ptr) == 1)
+	while (check_sort(array, ptr) == 1)
 	{
-		if (a[0] < a[1])
-			ft_rrotate("rra\n", ptr->a, ptr);
+		if (array[0] < array[1])
+		{
+			ft_putstr_fd("r", 1);
+			ft_rrotate(str, array, ptr);
+		}
 		else
-			ft_swap("sa\n", a, ptr);
+			ft_swap(str, array, ptr);
 	}
 }
 
@@ -46,6 +49,31 @@ void	ft_sort_5(t_stack *ptr)
 	i = ptr->sizea - 3;
 	while (i-- > 0)
 		ft_pb(ptr);
-	ft_sort_3(ptr->a, ptr);
-	ft_sort_3(ptr->b, ptr);
+	ft_sort_3("a\n", ptr->a, ptr);
+	ft_sort_3("b\n", ptr->b, ptr);
+	ft_merge(ptr);
+}
+
+void	ft_merge(t_stack *ptr)
+{
+	int	i;
+
+	i = 0;
+	if (ptr->a[0] < ptr->b[0] && ptr->a[ptr->sizea - 1] < ptr->b[0])
+	{
+		ft_pa(ptr);
+		ft_rotate("a\n", ptr->a, ptr);
+	}
+	while (ptr->sizeb > 0)
+	{
+		if (ptr->a[0] > ptr->b[0])
+		{
+			ft_pa(ptr);
+			ft_rotate("a\n", ptr->a, ptr);
+		}
+		else
+			ft_rotate("a\n", ptr->a, ptr);
+	}
+	while (check_sort(ptr->a, ptr) == 1)
+		ft_rotate("a\n", ptr->a, ptr);
 }
