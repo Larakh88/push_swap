@@ -6,50 +6,61 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/16 15:59:28 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:42:14 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_sa(int *a, t_stack *ptr)
+void	ft_swap(char *str, int *array, t_stack *ptr)
 {
 	int	temp;
+	int	j;
 
-	if (ptr->sizea > 1)
+	if (array == ptr->a)
+		j = ptr->sizea;
+	else
+		j = ptr->sizeb;
+	if (j > 1)
 	{
-		temp = a[0];
-		a[0] = a[1];
-		a[1] = temp;
-		ft_putstr_fd("sa\n", 1);
+		temp = array[0];
+		array[0] = array[1];
+		array[1] = temp;
+		ft_putstr_fd(str, 1);
 	}
 }
 
-void	ft_sb(int *b, t_stack *ptr)
+void	ft_ss(t_stack *ptr)
 {
-	int	temp;
-
-	if (ptr->sizeb > 1)
-	{
-		temp = b[0];
-		b[0] = b[1];
-		b[1] = temp;
-		ft_putstr_fd("sb\n", 1);
-	}
-}
-
-void	ft_ss(int *a, int *b, t_stack *ptr)
-{
-	ft_sa(a, ptr);
-	ft_sb(b, ptr);
+	ft_swap("", ptr->a, ptr);
+	ft_swap("", ptr->b, ptr);
 	ft_putstr_fd("ss\n", 1);
 }
-/*
+
 void	ft_pa(t_stack *ptr)
 {
+	int	i;
+	int	j;
 
+	ptr->sizea++;
+	i = 0;
+	j = ptr->sizea;
+	ptr->sizeb--;
+	while (j > 0)
+	{
+		ptr->a[j] = ptr->a[j - 1];
+		j--;
+	}
+	ptr->a[j] = ptr->b[0];
+	while (i < ptr->sizeb)
+	{
+		ptr->b[i] = ptr->b[i + 1];
+		i++;
+	}
+	ptr->b[i] = 0;
+	ft_putstr_fd("pa\n", 1);
 }
-*/
+
 void	ft_pb(t_stack *ptr)
 {
 	int	i;
@@ -71,4 +82,5 @@ void	ft_pb(t_stack *ptr)
 		i++;
 	}
 	ptr->a[i] = 0;
+	ft_putstr_fd("pb\n", 1);
 }

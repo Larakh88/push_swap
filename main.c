@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/16 15:59:35 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:41:31 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,25 @@ int	main(int argc, char **argv)
 	if (check_sort(ptr->a, ptr) == 0)
 		ft_error("", 0, ptr);
 	else
-		ft_sort_select(ptr);
-	/*printf("a is\n%d\n", ptr->a[0]);
+	{
+		ft_pb(ptr);
+		ft_pb(ptr);
+		ft_pb(ptr);
+		ft_ss(ptr);
+	}
+		//ft_sort_select(ptr);
+	printf("a is\n%d\n", ptr->a[0]);
 	printf("%d\n", ptr->a[1]);
 	printf("%d\n", ptr->a[2]);
 	printf("%d\n", ptr->a[3]);
+	printf("%d\n", ptr->a[4]);
+	printf("%d\n", ptr->a[5]);
 	printf("sizea %d\n", ptr->sizea);
 	printf("b is\n%d\n", ptr->b[0]);
 	printf("%d\n", ptr->b[1]);
 	printf("%d\n", ptr->b[2]);
 	printf("%d\n", ptr->b[3]);
-	printf("sizeb %d\n", ptr->sizeb);*/
+	printf("%d\n", ptr->b[4]);
+	printf("%d\n", ptr->b[5]);
+	printf("sizeb %d\n", ptr->sizeb);
 }

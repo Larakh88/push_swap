@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:18:28 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/16 15:59:33 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:40:36 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,37 @@
 void	ft_sort_select(t_stack *ptr)
 {
 	if (ptr->sizea == 2)
-		ft_sort_2(ptr);
+		ft_sort_2(ptr->a, ptr);
 	if (ptr->sizea == 3)
-		ft_sort_3(ptr);
-//	if (ptr->sizea > 3 && ptr->sizea < 7)
-//		ft_sort_5(ptr);
+		ft_sort_3(ptr->a, ptr);
+	if (ptr->sizea > 3 && ptr->sizea < 7)
+		ft_sort_5(ptr);
 }
 
-void	ft_sort_2(t_stack *ptr)
+void	ft_sort_2(int *a, t_stack *ptr)
 {
-	if (ptr->a[0] > ptr->a[1])
-		ft_sa(ptr->a, ptr);
+	if (a[0] > a[1])
+		ft_swap("sa\n", a, ptr);
 }
 
-void	ft_sort_3(t_stack *ptr)
+void	ft_sort_3(int *a, t_stack *ptr)
 {
-	while (check_sort(ptr->a, ptr) == 1)
+	while (check_sort(a, ptr) == 1)
 	{
-		if (ptr->a[0] < ptr->a[1])
-			ft_rra(ptr);
+		if (a[0] < a[1])
+			ft_rrotate("rra\n", ptr->a, ptr);
 		else
-			ft_sa(ptr->a, ptr);
+			ft_swap("sa\n", a, ptr);
 	}
+}
+
+void	ft_sort_5(t_stack *ptr)
+{
+	int	i;
+
+	i = ptr->sizea - 3;
+	while (i-- > 0)
+		ft_pb(ptr);
+	ft_sort_3(ptr->a, ptr);
+	ft_sort_3(ptr->b, ptr);
 }

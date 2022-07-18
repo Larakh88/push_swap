@@ -6,45 +6,65 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/16 15:59:30 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:34:12 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-/*
-void	ft_ra(t_stack *ptr)
-{
 
+void	ft_rotate(char *str, int *array, t_stack *ptr)
+{
+	int		temp;
+	int		i;
+	int		j;
+
+	i = 0;
+	temp = array[0];
+	if (array == ptr->a)
+		j = ptr->sizea;
+	else
+		j = ptr->sizeb;
+	while (i < j)
+	{
+		array[i] = array[i + 1];
+		i++;
+	}
+	array[i - 1] = temp;
+	ft_putstr_fd(str, 1);
 }
 
-void	ft_rb(t_stack *ptr)
-{
-	
-}
 
 void	ft_rr(t_stack *ptr)
 {
-	
+	ft_rotate("", ptr->a, ptr);
+	ft_rotate("", ptr->b, ptr);
+	ft_putstr_fd("rr\n", 1);
 }
-*/
-void	ft_rra(t_stack *ptr)
+
+void	ft_rrotate(char *str, int *array, t_stack *ptr)
 {
 	int	temp;
 	int	i;
+	int	j;
 
-	i = ptr->sizea - 1;
-	temp = ptr->a[ptr->sizea - 1];
+	if (array == ptr->a)
+		j = ptr->sizea;
+	else
+		j = ptr->sizeb;
+	i = j - 1;
+	temp = array[i];
 	while (i > 0)
 	{
-		ptr->a[i] = ptr->a[i - 1];
+		array[i] = array[i - 1];
 		i--;
 	}
-	ptr->a[i] = temp;
-	ft_putstr_fd("rra\n", 1);
+	array[i] = temp;
+	ft_putstr_fd(str, 1);
 }
-/*
-void	ft_rrb(t_stack *ptr)
+
+void	ft_rrr(t_stack *ptr)
 {
-	
+	ft_rrotate("", ptr->a, ptr);
+	ft_rrotate("", ptr->b, ptr);
+	ft_putstr_fd("rrr\n", 1);
 }
-*/
