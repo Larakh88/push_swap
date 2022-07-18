@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 17:36:13 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 23:07:52 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,18 @@ int	main(int argc, char **argv)
 		ft_error("", 0, ptr);
 	else
 		ft_sort_select(ptr);
-	printf("a is\n%d\n", ptr->a[0]);
-	printf("%d\n", ptr->a[1]);
-	printf("%d\n", ptr->a[2]);
-	printf("%d\n", ptr->a[3]);
-	printf("%d\n", ptr->a[4]);
-	printf("%d\n", ptr->a[5]);
-	printf("sizea %d\n", ptr->sizea);
-	printf("b is\n%d\n", ptr->b[0]);
-	printf("%d\n", ptr->b[1]);
-	printf("%d\n", ptr->b[2]);
-	printf("%d\n", ptr->b[3]);
-	printf("%d\n", ptr->b[4]);
-	printf("%d\n", ptr->b[5]);
-	printf("sizeb %d\n", ptr->sizeb);
+	// printf("a is\n%d\n", ptr->a[0]);
+	// printf("%d\n", ptr->a[1]);
+	// printf("%d\n", ptr->a[2]);
+	// printf("%d\n", ptr->a[3]);
+	// printf("%d\n", ptr->a[4]);
+	// printf("%d\n", ptr->a[5]);
+	// printf("sizea %d\n", ptr->sizea);
+	// printf("b is\n%d\n", ptr->b[0]);
+	// printf("%d\n", ptr->b[1]);
+	// printf("%d\n", ptr->b[2]);
+	// printf("%d\n", ptr->b[3]);
+	// printf("%d\n", ptr->b[4]);
+	// printf("%d\n", ptr->b[5]);
+	// printf("sizeb %d\n", ptr->sizeb);
 }

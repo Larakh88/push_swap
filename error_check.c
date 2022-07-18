@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:34:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/16 11:01:02 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/18 23:04:30 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	error_check(t_stack *ptr)
 			ft_isdigit(ptr->temp[i][j]) == 1)
 				j++;
 			else
-				ft_error("Error: Non Numerical Argument!\n", 1, ptr);
+				ft_error("Error\n", 1, ptr);
 		}
 		i++;
 	}
@@ -55,7 +55,7 @@ void	ft_check_dup(t_stack *ptr)
 			if (ft_strncmp(ptr->temp[i], ptr->temp[j], k) != 0)
 				j++;
 			else
-				ft_error("Error: Duplicate Arguments\n", 1, ptr);
+				ft_error("Error\n", 1, ptr);
 		}
 		i++;
 	}
@@ -70,17 +70,35 @@ void	ft_check_limits(t_stack *ptr)
 	while (ptr->temp[i] != 0)
 	{
 		nb = ft_atoi(ptr->temp[i]);
-		if (((nb == 0 || nb == -1) && ft_strlen(ptr->temp[i]) >= 10) \
-		|| ft_strlen(ptr->temp[i]) > 11)
-			ft_error("Error: Integers outside the int limits\n", 1, ptr);
+		if (((nb == 0 || nb == -1) && ft_strlen(ptr->temp[i]) >= 9) \
+		|| ft_strlen(ptr->temp[i]) > 12)
+			ft_error("Error\n", 1, ptr);
 		i++;
 	}
 }
 
 void	ft_error(char *str, int i, t_stack *ptr)
 {
-	free (ptr->temp);
-	free (ptr);
-	ft_putstr_fd(str, 1);
+	free_stack (ptr);
+	ft_putstr_fd(str, 2);
 	exit(i);
+}
+
+void	free_stack(t_stack *ptr)
+{
+	int	i;
+
+	i = 0;
+	if (ptr->temp)
+	{
+		while (ptr->temp[i] != 0)
+		{
+			free(ptr->temp[i]);
+			i++;
+		}
+		free (ptr->temp);
+	}
+	free(ptr->a);
+	free(ptr->b);
+	free(ptr);
 }
