@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:01:40 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 23:07:36 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/22 22:44:56 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_merge(t_stack *ptr);
 void	ft_sort_2(char *str, int *array, t_stack *ptr);
 void	ft_sort_3(char *str, int *array, t_stack *ptr);
 void	ft_sort_5(t_stack *ptr);
+int		ft_sort_medium(t_stack *ptr);
 void	ft_swap(char *str, int *array, t_stack *ptr);
 void	ft_ss(t_stack *ptr);
 void	ft_pa(t_stack *ptr);

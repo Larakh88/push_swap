@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 23:07:39 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/22 19:59:12 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	ft_pa(t_stack *ptr)
 	int	i;
 	int	j;
 
-	ptr->sizea++;
+	ptr->sizeb--;
 	i = 0;
 	j = ptr->sizea;
-	ptr->sizeb--;
+	ptr->sizea++;
 	while (j > 0)
 	{
 		ptr->a[j] = ptr->a[j - 1];

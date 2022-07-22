@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/18 23:07:41 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/22 22:19:48 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_rotate(char *str, int *array, t_stack *ptr)
 	ft_putstr_fd("r", 1);
 	ft_putstr_fd(str, 1);
 }
-
 
 void	ft_rr(t_stack *ptr)
 {
