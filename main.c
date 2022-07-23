@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 00:37:16 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/23 11:11:57 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 		ft_error("Error: malloc\n", 1, ptr);
 	error_check(ptr);
 	stack_init(ptr);
+	free_temp(ptr->temp);
 	if (check_sort(ptr->a, ptr) == 0)
 		ft_error("", 0, ptr);
 	else

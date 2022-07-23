@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:34:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 00:40:42 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/23 11:11:55 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,26 +79,27 @@ void	ft_check_limits(t_stack *ptr)
 
 void	ft_error(char *str, int i, t_stack *ptr)
 {
-	free_stack (ptr);
+	if (i == 1)
+		free_temp(ptr->temp);
+	free(ptr->a);
+	free(ptr->b);
+	free(ptr);
 	ft_putstr_fd(str, 2);
 	exit(i);
 }
 
-void	free_stack(t_stack *ptr)
+void	free_temp(char **ptr)
 {
 	int	i;
 
 	i = 0;
-	if (ptr->temp)
+	if (ptr)
 	{
-		while (ptr->temp[i] != 0)
+		while (ptr[i] != 0)
 		{
-			free(ptr->temp[i]);
+			free(ptr[i]);
 			i++;
 		}
-		free (ptr->temp);
+		free (ptr);
 	}
-	free(ptr->a);
-	free(ptr->b);
-	free(ptr);
 }
