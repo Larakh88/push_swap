@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:01:40 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 11:11:54 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/23 21:38:47 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 	int		*b;
 	int		sizea;
 	int		sizeb;
+	int		n; //this is the size of the longest nb in the list.
 }	t_stack;
 
 void	temp_init(t_stack *ptr, int argc, char **argv);
@@ -38,7 +39,14 @@ void	ft_merge(t_stack *ptr);
 void	ft_sort_2(char *str, int *array, t_stack *ptr);
 void	ft_sort_3(char *str, int *array, t_stack *ptr);
 void	ft_sort_5(t_stack *ptr);
-int		ft_sort_medium(t_stack *ptr);
+void	ft_sort_medium(t_stack *ptr);
+void	ft_radix_a(t_stack *ptr, long int x);
+void	ft_radix_b(t_stack *ptr, long int x);
+void	move_neg(t_stack *ptr);
+void	longest_digit(t_stack *ptr);
+int		ft_nb_length(long int n);
+int		abs_value(int n);
+int		lowest_nb(int n, long int x);
 void	ft_swap(char *str, int *array, t_stack *ptr);
 void	ft_ss(t_stack *ptr);
 void	ft_pa(t_stack *ptr);
