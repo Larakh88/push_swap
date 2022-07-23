@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:25:35 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 21:39:03 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/23 23:21:28 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_nb_length(long int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 		n = -n;
 	while (n > 0)
