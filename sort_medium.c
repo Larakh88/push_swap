@@ -6,25 +6,11 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 22:20:52 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 23:30:17 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:04:29 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void	longest_digit(t_stack *ptr)
-{
-	int	i;
-
-	i = 1;
-	ptr->n = ft_nb_length(ptr->a[0]);
-	while (i < ptr->sizea)
-	{
-		if (ft_nb_length(ptr->a[i]) > ptr->n)
-			ptr->n = ft_nb_length(ptr->a[i]);
-		i++;
-	}
-}
 
 void	ft_radix_a(t_stack *ptr, long int x)
 {
@@ -74,31 +60,6 @@ void	ft_radix_b(t_stack *ptr, long int x)
 	}
 }
 
-void	move_neg(t_stack *ptr)
-{
-	int	end;
-	int	i;
-
-	end = ptr->a[ptr->sizea - 1];
-	i = 0;
-	while (ptr->a[i] != end)
-	{
-		if (ptr->a[i] < 0)
-			ft_pb(ptr);
-		else
-			ft_rotate("a\n", ptr->a, ptr);
-	}
-	if (ptr->a[i] < 0)
-		ft_pb(ptr);
-	else
-		ft_rotate("a\n", ptr->a, ptr);
-	while (ptr->sizeb > 0)
-	{
-		ft_rrotate("rb\n", ptr->b, ptr);
-		ft_pa(ptr);
-	}
-}
-
 void	ft_sort_medium(t_stack *ptr)
 {
 	int			i;
@@ -112,12 +73,16 @@ void	ft_sort_medium(t_stack *ptr)
 		ft_radix_a(ptr, x);
 		x = x * 10;
 		i++;
-		if (i <= ptr->n)
+		if (i < ptr->n || ft_is_even(ptr->n) == 0)
 		{
 			ft_radix_b(ptr, x);
 			x = x * 10;
 			i++;
 		}
 	}
-	move_neg(ptr);
+	if (ft_is_even(ptr->n) == 1)
+	{
+		while (ptr->sizeb > 0)
+			ft_pa(ptr);
+	}
 }

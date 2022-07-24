@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:02:05 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 21:38:26 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:04:47 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	check_sort(int *array, t_stack *ptr)
 		j = ptr->sizea;
 	else
 		j = ptr->sizeb;
+	if (j == 1)
+		return (0);
 	while (i < j - 1)
 	{
 		if (array[i] < array[i + 1])

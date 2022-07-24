@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:18:28 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 23:27:23 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:04:36 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ void	ft_sort_select(t_stack *ptr)
 		ft_sort_3("a\n", ptr->a, ptr);
 	if (ptr->sizea > 3 && ptr->sizea < 6)
 		ft_sort_5(ptr);
-	if (ptr->sizea >= 6 && ptr->sizea <= 500)
+	if (ptr->sizea >= 6)
+	{
+		small_array(ptr);
+		copy_array(ptr);
 		ft_sort_medium(ptr);
+	}
 	ft_error("", 0, ptr);
 }
 
@@ -54,8 +58,11 @@ void	ft_sort_5(t_stack *ptr)
 	int	i;
 
 	i = ptr->sizea - 3;
-	while (i-- > 0)
+	while (i > 0)
+	{
 		ft_pb(ptr);
+		i--;
+	}
 	ft_sort_3("a\n", ptr->a, ptr);
 	ft_sort_2("b\n", ptr->b, ptr);
 	ft_merge(ptr);

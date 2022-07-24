@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:34:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 11:11:55 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 19:16:12 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,12 @@ void	ft_error(char *str, int i, t_stack *ptr)
 {
 	if (i == 1)
 		free_temp(ptr->temp);
-	free(ptr->a);
-	free(ptr->b);
-	free(ptr);
+	if (ptr->a)
+		free(ptr->a);
+	if (ptr->b)
+		free(ptr->b);
+	if (ptr)
+		free(ptr);
 	ft_putstr_fd(str, 2);
 	exit(i);
 }

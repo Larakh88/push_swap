@@ -6,11 +6,25 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:25:35 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 23:21:28 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 17:04:53 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+void	longest_digit(t_stack *ptr)
+{
+	int	i;
+
+	i = 1;
+	ptr->n = ft_nb_length(ptr->a[0]);
+	while (i < ptr->sizea)
+	{
+		if (ft_nb_length(ptr->a[i]) > ptr->n)
+			ptr->n = ft_nb_length(ptr->a[i]);
+		i++;
+	}
+}
 
 int	ft_nb_length(long int n)
 {
@@ -43,4 +57,11 @@ int	lowest_nb(int n, long int x)
 	while (n >= 10)
 		n = n / 10;
 	return (n);
+}
+
+int	ft_is_even(int n)
+{
+	if (n % 2 != 0)
+		return (1);
+	return (0);
 }

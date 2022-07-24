@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/23 21:39:14 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 19:28:30 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,8 @@ int	main(int argc, char **argv)
 	error_check(ptr);
 	stack_init(ptr);
 	free_temp(ptr->temp);
+	ft_initialize(ptr);
 	if (check_sort(ptr->a, ptr) == 0)
 		ft_error("", 0, ptr);
-	else
-		ft_sort_select(ptr);
-	// printf("a is\n%d\n", ptr->a[0]);
-	// printf("%d\n", ptr->a[1]);
-	// printf("%d\n", ptr->a[2]);
-	// printf("%d\n", ptr->a[3]);
-	// printf("%d\n", ptr->a[4]);
-	// printf("%d\n", ptr->a[5]);
-	// printf("%d\n", ptr->a[6]);
-	// printf("%d\n", ptr->a[7]);
-	// printf("%d\n", ptr->a[8]);
-	// printf("sizea %d\n", ptr->sizea);
-	// printf("b is\n%d\n", ptr->b[0]);
-	// printf("%d\n", ptr->b[1]);
-	// printf("%d\n", ptr->b[2]);
-	// printf("%d\n", ptr->b[3]);
-	// printf("%d\n", ptr->b[4]);
-	// printf("%d\n", ptr->b[5]);
-	// printf("%d\n", ptr->b[6]);
-	// printf("%d\n", ptr->b[7]);
-	// printf("%d\n", ptr->b[8]);
-	// printf("sizeb %d\n", ptr->sizeb);
+	ft_sort_select(ptr);
 }
