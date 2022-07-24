@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:19:01 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/24 20:11:51 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/24 20:45:27 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	ft_rotate(char *str, int *array, t_stack *ptr)
 		j = ptr->sizea;
 	else
 		j = ptr->sizeb;
-	while (i < j)
+	while (i < j - 1)
 	{
 		array[i] = array[i + 1];
 		i++;
 	}
-	array[i - 1] = temp;
+		array[i] = temp;
 	ft_putstr_fd("r", 1);
 	ft_putstr_fd(str, 1);
 }
