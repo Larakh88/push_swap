@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:02:05 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/24 20:36:53 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:38:26 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ void	temp_init(t_stack *ptr, int argc, char **argv)
 	while (i < argc - 1)
 	{
 		ptr->temp[i] = ft_strdup(argv[i + 1]);
+		i++;
+	}
+	ptr->temp[i] = NULL;
+}
+
+void	temp_init1(t_stack *ptr, int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	ptr->temp = malloc(sizeof(char *) * argc);
+	if (!ptr->temp)
+		ft_error("Error: malloc\n", 1, ptr);
+	while (i < argc - 1)
+	{
+		ptr->temp[i] = ft_strdup(argv[i]);
 		i++;
 	}
 	ptr->temp[i] = NULL;

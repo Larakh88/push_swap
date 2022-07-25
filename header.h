@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:01:40 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/24 20:45:29 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:37:02 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	ft_sort_3(char *str, int *array, t_stack *ptr);
 void	ft_sort_5(t_stack *ptr);
 void	ft_sort_medium(t_stack *ptr);
 void	ft_radix_a(t_stack *ptr, long int x);
+void	ft_radix_a_high(t_stack *ptr, long int x);
+void	ft_sort_high(t_stack *ptr);
 void	ft_radix_b(t_stack *ptr, long int x);
 void	ft_swap(char *str, int *array, t_stack *ptr);
 void	ft_ss(t_stack *ptr);
@@ -56,11 +58,12 @@ void	free_temp(char **ptr);
 void	ft_initialize(t_stack *ptr);
 void	longest_digit(t_stack *ptr);
 int		ft_nb_length(long int n);
-int		abs_value(int n);
 int		lowest_nb(int n, long int x);
 int		ft_is_even(int n);
 int		find_smallest(int *array, int size, int n);
 void	small_array(t_stack *ptr);
 void	copy_array(t_stack *ptr);
+size_t	ft_count(char *s, char c);
+void	temp_init1(t_stack *ptr, int argc, char **argv);
 
 #endif

@@ -6,11 +6,31 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 12:25:35 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/24 17:04:53 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:38:08 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+size_t	ft_count(char *s, char c)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (i < ft_strlen(s))
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
+			break ;
+		if (s[i + 1] == c || s[i + 1] == '\0')
+			j++;
+		i++;
+	}
+	return (j);
+}
 
 void	longest_digit(t_stack *ptr)
 {
@@ -33,21 +53,12 @@ int	ft_nb_length(long int n)
 	i = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
-		n = -n;
 	while (n > 0)
 	{
 		n = n / 10;
 		i++;
 	}
 	return (i);
-}
-
-int	abs_value(int n)
-{
-	if (n < 0)
-		n = -1 * n;
-	return (n);
 }
 
 int	lowest_nb(int n, long int x)

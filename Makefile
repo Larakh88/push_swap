@@ -6,7 +6,7 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 11:04:16 by lel-khou          #+#    #+#              #
-#    Updated: 2022/07/24 18:41:35 by lel-khou         ###   ########.fr        #
+#    Updated: 2022/07/25 19:26:41 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ RM = rm -f
 
 NAME = push_swap
 
-SRC = main.c error_check.c stack_init.c operations.c rotate.c sort.c sort_medium.c utils.c utils1.c
+SRC = main.c error_check.c stack_init.c operations.c rotate.c sort.c sort_medium.c \
+sort_high.c utils.c utils1.c
 
 OBJS = $(SRC:.c=.o)
 

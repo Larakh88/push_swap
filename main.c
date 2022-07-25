@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 11:40:57 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/24 20:45:25 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/25 20:39:24 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*ptr;
+	char	**split;
 
 	if (argc < 2)
 		exit(1);
-	ptr = malloc(sizeof(t_stack));
+	ptr = (t_stack *)malloc(sizeof(t_stack));
 	if (!ptr)
-		ft_error("Error: malloc\n", 1, ptr);
+		return (0);
 	if (argc == 2)
-		ptr->temp = ft_split(argv[1], ' ');
+	{
+		split = ft_split(argv[1], ' ');
+		temp_init1(ptr, ft_count(argv[1], ' ') + 1, split);
+	}
 	if (argc > 2)
 		temp_init(ptr, argc, argv);
 	if (!ptr->temp)
