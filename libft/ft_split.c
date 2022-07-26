@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 09:57:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/25 20:35:47 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:43:21 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	ft_start(const char *s, char c)
 	size_t	start;
 
 	start = 0;
-	while (s != 0)
+	while (s && *s)
 	{
 		if (*s == c && *s != 0)
 		{
@@ -55,7 +55,7 @@ static size_t	ft_end(const char *s, char c)
 	size_t	end;
 
 	end = 0;
-	while (s != 0)
+	while (s && *s)
 	{
 		if (*s != c && *s != 0)
 		{	
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 	d = (char *)s;
 	if (!s)
 		return (0);
-	ptr = (char **)malloc(sizeof(char *) * ft_count(s, c) + 1);
+	ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (!ptr)
 		return (0);
 	while (i < ft_count(s, c))

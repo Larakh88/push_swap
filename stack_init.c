@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 11:02:05 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/25 20:38:26 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:13:36 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	temp_init1(t_stack *ptr, int argc, char **argv)
 		i++;
 	}
 	ptr->temp[i] = NULL;
+	if (argv)
+		free_temp(argv);
 }
 
 void	stack_init(t_stack *ptr)
