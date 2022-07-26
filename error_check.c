@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 12:34:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/07/26 11:13:45 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:56:23 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ void	ft_error(char *str, int i, t_stack *ptr)
 	ft_putstr_fd(str, 2);
 	exit(i);
 }
-
-
 
 void	free_temp(char **ptr)
 {
